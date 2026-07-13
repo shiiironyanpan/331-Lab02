@@ -2,50 +2,31 @@
 import EventCard from '@/components/EventCard.vue'
 import EventMeta from '@/components/EventMeta.vue'
 import type { Event } from '@/types'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'       // added onMounted
+import axios from 'axios'                  // added
 
-const events = ref<Event[]>([
-  {
-    id: 5928101,
-    category: 'animal welfare',
-    title: 'Cat Adoption Day',
-    description: 'Find your new feline friend at this event.',
-    location: 'Meow Town',
-    date: 'January 28, 2026',
-    time: '12:00',
-    petsAllowed: true,
-    organizer: 'Kat Laydee'
-  },
-  {
-    id: 4582797,
-    category: 'food',
-    title: 'Community Gardening',
-    description: 'Join us as we tend to the community edible plants.',
-    location: 'Flora City',
-    date: 'March 14, 2026',
-    time: '10:00',
-    petsAllowed: true,
-    organizer: 'Fern Pollin'
-  },
-  {
-    id: 8419988,
-    category: 'sustainability',
-    title: 'Beach Cleanup',
-    description: 'Help pick up trash along the shore.',
-    location: 'Playa Del Carmen',
-    date: 'July 22, 2026',
-    time: '11:00',
-    petsAllowed: false,
-    organizer: 'Carey Wales'
-  }
-])
+const events = ref<Event[] | null>(null)   // changed from array to null
+
+onMounted(() => {
+  axios
+    .get('https://my-json-server.typicode.com/shiiironyanpan/672115048/events')
+    .then((response) => {
+      console.log(response.data)           // show data in console
+      events.value = response.data         // assign to events
+    })
+    .catch((error) => {
+      console.error('There was an error!', error)
+    })
+})
 </script>
 
 <template>
   <div class="home">
     <h1>Events For Good</h1>
     <div class="events">
-      <template v-for="event in events" :key="event.id">
+      <!-- Show loading or empty state if events is null -->
+      <div v-if="!events">Loading events...</div>
+      <template v-else v-for="event in events" :key="event.id">
         <EventCard :event="event" />
         <EventMeta :event="event" />
       </template>
