@@ -1,0 +1,13 @@
+PS C:\Users\zeerowiibu\ANOTHERPAIN\Lab02\SunVue> npm run dev
+
+> sunvue@0.0.0 dev
+> vite
+
+
+  VITE v8.1.4  ready in 583 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+  ➜  press h + enter to show help
