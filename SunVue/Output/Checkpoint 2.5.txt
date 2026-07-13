@@ -1,0 +1,28 @@
+PS C:\Users\zeerowiibu\ANOTHERPAIN\Lab02> cd SunVue
+PS C:\Users\zeerowiibu\ANOTHERPAIN\Lab02\SunVue> npm install
+
+added 313 packages, and audited 314 packages in 46s
+
+84 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\zeerowiibu\ANOTHERPAIN\Lab02\SunVue> npm run format
+
+> sunvue@0.0.0 format
+> prettier --write --experimental-cli src/
+
+PS C:\Users\zeerowiibu\ANOTHERPAIN\Lab02\SunVue> npm run dev
+
+> sunvue@0.0.0 dev
+> vite
+
+
+  VITE v8.1.4  ready in 10850 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+  ➜  press h + enter to show help
+--host
