@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="wrapper">
         <nav>
           <RouterLink to="/">Event</RouterLink> |
+          <RouterLink to="/students">Students</RouterLink> |
           <RouterLink to="/about">About</RouterLink>
         </nav>
       </div>
@@ -31,7 +32,7 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: 2c3e50;
+  color: #2c3e50;
 }
 
 nav a.router-link-exact-active {
