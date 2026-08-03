@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue'
 import EventMeta from '@/components/EventMeta.vue'
-import type { Event } from '@/types'
-import { ref, onMounted } from 'vue'       // added onMounted
-import axios from 'axios'                  // added
+import type { Event } from '@/type'
+import { ref, onMounted } from 'vue'
+import EventService from '@/services/EventService'
 
-const events = ref<Event[] | null>(null)   // changed from array to null
+const events = ref<Event[] | null>(null)
 
 onMounted(() => {
-  axios
-    .get('https://my-json-server.typicode.com/shiiironyanpan/672115048/events')
+  EventService.getEvents()
     .then((response) => {
-      console.log(response.data)           // show data in console
-      events.value = response.data         // assign to events
+      console.log(response.data)
+      events.value = response.data
     })
     .catch((error) => {
       console.error('There was an error!', error)
