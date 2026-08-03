@@ -7,9 +7,9 @@ import { RouterLink, RouterView } from 'vue-router'
     <header>
       <div class="wrapper">
         <nav>
-          <RouterLink to="/">Event</RouterLink> |
-          <RouterLink to="/about">About</RouterLink> |
-          <RouterLink to="/students">Students</RouterLink>
+          <RouterLink :to="{ name: 'home' }">Event</RouterLink> |
+          <RouterLink :to="{ name: 'about' }">About</RouterLink> |
+          <RouterLink :to="{ name: 'students' }">Students</RouterLink>
         </nav>
       </div>
     </header>
@@ -32,7 +32,7 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: 2c3e50;
+  color: #2c3e50;
 }
 
 nav a.router-link-exact-active {
