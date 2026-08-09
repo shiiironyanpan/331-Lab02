@@ -21,14 +21,13 @@ const events = ref<Event[] | null>(null)
 const totalEvents = ref<number>(0)
 const page = computed(() => props.page)
 const hasNextPage = computed(() => {
-    const totalPages = Math.ceil(totalEvents.value / props.perPage)
+    const totalPages = Math.ceil(totalEvents.value / 3)
     return page.value < totalPages
 })
 const router = useRouter()
 
 watchEffect(() => {
-    events.value = null
-    EventService.getEvents(props.perPage, page.value)
+    EventService.getEvents(3, page.value)
         .then((response) => {
             events.value = response.data
             totalEvents.value = response.headers['x-total-count']
