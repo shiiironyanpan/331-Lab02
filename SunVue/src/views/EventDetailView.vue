@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { type Event } from '@/type'
+import { type Event } from '@/types'
 import EventService from '@/services/EventService'
 const event = ref<Event | null>(null)
 const props = defineProps({
