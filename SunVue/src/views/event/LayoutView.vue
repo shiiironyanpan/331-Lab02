@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Event } from '@/types'
+import { type Event } from '@/types' 
 import { useEventStore } from '@/stores/event'
 import { storeToRefs } from 'pinia'
 
