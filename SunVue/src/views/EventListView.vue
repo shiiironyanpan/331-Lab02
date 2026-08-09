@@ -4,6 +4,7 @@ import EventMeta from '@/components/EventMeta.vue'
 import type { Event } from '@/types'
 import { ref, computed, watchEffect } from 'vue'
 import EventService from '@/services/EventService'
+import { useRouter } from 'vue-router'
 
 const props = defineProps({
     page: {
@@ -23,6 +24,7 @@ const hasNextPage = computed(() => {
     const totalPages = Math.ceil(totalEvents.value / props.perPage)
     return page.value < totalPages
 })
+const router = useRouter()
 
 watchEffect(() => {
     events.value = null
@@ -31,8 +33,8 @@ watchEffect(() => {
             events.value = response.data
             totalEvents.value = response.headers['x-total-count']
         })
-        .catch((error) => {
-            console.error('There was an error!', error)
+        .catch(() => {
+            router.push({ name: 'network-error-view' })
         })
 })
 </script>
