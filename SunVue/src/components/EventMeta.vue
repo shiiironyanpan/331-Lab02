@@ -7,17 +7,8 @@ defineProps<{
 </script>
 
 <template>
-  <div class="event-meta">
+  <div class="flex justify-end gap-3 text-sm">
     <span>{{ event.category }}</span>
     <span>{{ event.organizer }}</span>
   </div>
 </template>
-
-<style scoped>
-.event-meta {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  font-size: 14px;
-}
-</style>

@@ -14,23 +14,9 @@ const { message } = storeToRefs(store)
 </script>
 
 <template>
-  <div v-if="message" class="flash-message">
+  <div v-if="message" class="animate-fade">
     <h4>{{ message }}</h4>
   </div>
   <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
   <p>{{ event.description }}</p>
 </template>
-
-<style scoped>
-.flash-message {
-  animation: yellowFade 3s ease-in-out;
-}
-@keyframes yellowFade {
-  from {
-    background-color: yellow;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-</style>

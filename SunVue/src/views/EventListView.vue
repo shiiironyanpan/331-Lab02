@@ -48,15 +48,17 @@ watchEffect(() => {
         <EventMeta :event="event" />
       </template>
     </div>
-    <div class="pagination">
+    <div class="flex w-[290px]">
       <RouterLink
           id="page-prev"
+          class="flex-1 text-left no-underline text-[#2c3e50]"
           :to="{ name: 'event-list-view', query: { page: page - 1, perPage: perPage } }"
           rel="prev"
           v-if="page != 1"
           >&#60; Prev Page</RouterLink>
       <RouterLink
           id="page-next"
+          class="flex-1 text-right no-underline text-[#2c3e50]"
           :to="{ name: 'event-list-view', query: { page: page + 1, perPage: perPage } }"
           rel="next"
           v-if="hasNextPage"
@@ -64,21 +66,3 @@ watchEffect(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.pagination {
-  display: flex;
-  width: 290px;
-}
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-}
-#page-prev {
-  text-align: left;
-}
-#page-next {
-  text-align: right;
-}
-</style>

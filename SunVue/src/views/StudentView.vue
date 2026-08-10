@@ -25,9 +25,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="student-view">
+  <div class="flex flex-col items-center p-5">
     <h1>Student List</h1>
-    <div class="students">
+    <div class="flex flex-col items-center w-full">
       <!-- Loading state -->
       <div v-if="!students">Loading students...</div>
       
@@ -42,18 +42,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.student-view {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-.students {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-</style>
